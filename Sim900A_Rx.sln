@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sim900A_Rx", "Sim900A_Rx.csproj", "{5513CD5E-8AB6-4C42-AE35-7CC13DFED6A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5513CD5E-8AB6-4C42-AE35-7CC13DFED6A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5513CD5E-8AB6-4C42-AE35-7CC13DFED6A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5513CD5E-8AB6-4C42-AE35-7CC13DFED6A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5513CD5E-8AB6-4C42-AE35-7CC13DFED6A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6B082A8A-F21E-4153-90EA-3C7DBCADE7CF}
+	EndGlobalSection
+EndGlobal
