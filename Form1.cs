@@ -30,8 +30,10 @@ namespace Sim900A_Rx
         {
             try
             {
+                datelabel.Text= String.Format("{0:MM/dd/yyyy}", DateTime.Now);          // "09/05/2012"
+                
                 mySerialPort.Open();
-              //  mySerialPort.Write("RING\r\n");
+              
                 // mySerialPort.WriteLine(message);
                 // mySerialPort.Write(new byte[] { 13 }, 0, 1);
                 // mySerialPort.Write(command);
@@ -55,9 +57,12 @@ namespace Sim900A_Rx
 
                 // Read a line from the serial port.
                 string data = mySerialPort.ReadLine();
-                // ReceivedBox.Text= ("Received data: " + data);
-                ReceivedBox.Text = ReceivedBox.Text + data;
-
+                string leftPart = data.Substring(0, 4); // "RING"
+                
+                ReceivedBox.Text= (leftPart);
+                // ReceivedBox.Text = ReceivedBox.Text + data;
+                
+                //ReceivedBox.Text = "";
                 // Console.WriteLine("Received data: " + data);
             }
             catch (Exception ex)
@@ -65,6 +70,34 @@ namespace Sim900A_Rx
                // Console.WriteLine("Error: " + ex.Message);
                 ReceivedBox.Text = ("Error: " + ex.Message);
             }
+        }
+
+        private void serRxBox_TextChanged(object sender, EventArgs e)
+        {
+            if (serRxBox.Text == "RING")
+            {
+              //  serRxBox.Text = ReceivedBox.Text;
+                RxLed.BackColor = Color.LawnGreen;
+            }
+            
+            //serRxBox.Text = "";
+        }
+
+        private void ReceivedBox_TextChanged(object sender, EventArgs e)
+        {
+
+            if (ReceivedBox.Text == "RING")
+            {
+                serRxBox.Text = ReceivedBox.Text;
+                RxLed.BackColor = Color.Orange;
+                mySerialPort.Write("AT+CLCC\r\n");
+            }
+           
+        }
+
+        private void RxLed_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
